@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carioca ou não, eis a questão</title>
+    <style>
+      body {
+        background-image: url(https://prefeitura.rio/wp-content/uploads/2021/03/praia4.jpeg)
+      }
+
+      h1, p {
+        color: #f2f2f2;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Helvetica, sans-serif;
+        padding-left: 40px; 
+      }
+
+      h1 {
+        padding-top: 40px;
+      }
+
+      #txtestado {
+        margin-left: 10px;
+        border-radius: 4px;
+        background-color: rgb(249, 251, 250);
+                    border: 1px solid rgb(137, 151, 155);
+                    box-shadow: rgb(6 22 33 / 30%) 0px 1px 2px;
+                    color: rgb(61, 79, 88);
+                    height: 22px;
+                         
+      }
+
+      input {
+        padding-left: 10px;
+        text-transform: uppercase;
+        background-color: rgb(0, 0, 0, 0);
+        cursor: pointer;
+        border: none;
+        color: rgb(249, 253, 254);
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-left: 280px;
+
+      }
+      
+      input:hover {
+        text-decoration: underline;
+      }
+
+      #res {
+        color: black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Helvetica, sans-serif;
+        padding-left: 50px; 
+        font-size: 28px;
+        /*text-decoration: underline;*/
+        background-color: rgb(249, 251, 250, 0.5);
+        padding: 10px;
+        border-radius:  5px;
+        margin-left: 40px;
+      }
+
+      #res2 {
+        background-color: rgb(249, 251, 250, 0.5);
+        padding: 10px;
+        border-radius:  5px;
+        margin-left: 40px;
+        width: 280px;
+        color: black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Helvetica, sans-serif;
+        font-size: 28px;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    
+    <h1>Descubra se você é carioca ou não</h1>
+    <p>
+      Digite o seu estado:<input type="text" name="txtestado" id="txtestado" />
+    </p>
+    <input type="button" value="Consultar" onclick="calcular()"/>
+    <div id="resultado"></div>
+    
+
+    <script>
+      function calcular() {
+        var cidade = window.document.querySelector("input#txtestado");
+
+        var resultado = window.document.querySelector("div#resultado");
+
+        var carioques = txtestado.value;
+
+        resultado.innerHTML = `<p>Você escreveu <strong>${carioques}.</strong></p>`; //no resultado precisa indicar o que recebe que foi digitado
+
+        if (
+          carioques == "rio de janeiro" ||
+          carioques == "Rio de Janeiro" ||
+          carioques == "RIO DE JANEIRO" ||
+          (carioques == "rj") | (carioques == "RJ")
+        ) {
+          resultado.innerHTML += `<p id="res">Tú tá de caô né? Mermão mermão! Você é da gema, <strong>você é carioca :)</strong></p>`;
+        } else {
+          resultado.innerHTML += `<p id="res2">Você <strong>não é carioca :)</strong></p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
